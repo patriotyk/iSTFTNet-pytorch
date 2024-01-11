@@ -12,13 +12,10 @@ import torchaudio
 MAX_WAV_VALUE = 32768.0
 
 
-# def load_wav(full_path):
-#     sampling_rate, data = read(full_path)
-#     return data, sampling_rate
-
 def load_wav(full_path):
-    data, sr = torchaudio.load(full_path, channels_first=False)
-    return data.numpy(), sr
+    sampling_rate, data = read(full_path)
+    return data, sampling_rate
+
 
 
 def dynamic_range_compression(x, C=1, clip_val=1e-5):
